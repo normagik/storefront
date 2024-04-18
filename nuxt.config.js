@@ -40,11 +40,16 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     'nuxt-windicss',
+    '@braid/vue-formulate/nuxt',
+
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    ['nuxt-stripe-module', {
+      publishableKey: process.env.PUBLISHABLE_KEY
+    }]
   ],
   axios:{
     baseURL: 'http://localhost:9000/store'
@@ -53,5 +58,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+
   }
 }
